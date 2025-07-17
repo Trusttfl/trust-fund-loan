@@ -1,8 +1,7 @@
 const express = require('express');
-require('dotenv').config();
 const path = require('path');
-require('dotenv').config({ 
-  path: path.resolve(__dirname, '.env') 
+require('dotenv').config({
+  path: path.resolve(__dirname, '.env')  // resolve() is more robust than join()
 });
 const mongoose = require('mongoose');
 

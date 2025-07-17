@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | Trust Fund Loan</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <style>
+    .admin-login {
+      max-width: 400px;
+      margin: 5rem auto;
+      padding: 2rem;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .admin-login h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-login">
+    <h2>Admin Portal</h2>
+    <form id="adminLoginForm">
+      <div class="form-group">
+        <input type="text" id="adminUsername" placeholder="Username" required>
+      </div>
+      <div class="form-group">
+        <input type="password" id="adminPassword" placeholder="Password" required>
+      </div>
+      <button type="submit" class="submit-btn">Login</button>
+    </form>
+    <div id="loginError" class="result-message error" style="display:none; margin-top:1rem;"></div>
+  </div>
+
+  <script src="/assets/js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Loan Dashboard | Trust Fund Loan</title>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <style>
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #2c3e50;
+      color: white;
+    }
+    .admin-container {
+      padding: 2rem;
+    }
+    .loan-card {
+      background: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .loan-status {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: white;
+    }
+    .status-pending { background: #f39c12; }
+    .status-approved { background: #27ae60; }
+    .status-rejected { background: #e74c3c; }
+    .credit-score {
+      font-weight: bold;
+    }
+    .credit-high { color: #27ae60; }
+    .credit-low { color: #e74c3c; }
+    .document-link {
+      color: #3498db;
+      text-decoration: none;
+    }
+    .action-buttons {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="admin-header">
+    <h1>Loan Applications</h1>
+    <button id="logoutBtn">Logout</button>
+  </header>
+
+  <div class="admin-container">
+    <div class="filters">
+      <select id="statusFilter">
+        <option value="all">All Statuses</option>
+        <option value="pending">Pending</option>
+        <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
+      </select>
+      <input type="text" id="searchInput" placeholder="Search applications...">
+    </div>
+
+    <div id="loanContainer">
+      <!-- Loans will be loaded here by admin.js -->
+    </div>
+  </div>
+
+  <!-- Rejection Reason Modal -->
+  <div id="rejectModal" class="modal">
+    <div class="modal-content">
+      <h3>Reject Application</h3>
+      <input type="hidden" id="rejectLoanId">
+      <div class="form-group">
+        <label>Reason for Rejection</label>
+        <textarea id="rejectionReason" rows="4"></textarea>
+      </div>
+      <div class="action-buttons">
+        <button id="confirmRejectBtn" class="btn-danger">Confirm Rejection</button>
+        <button id="cancelRejectBtn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/assets/js/admin.js"></script>
+</body>
+</html>

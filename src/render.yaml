@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: trust-fund-loan-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server.js
+    env: node
+    envVars:
+      - key: NODE_ENV
+        value: production

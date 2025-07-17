@@ -1,21 +1,27 @@
 const express = require('express');
 const path = require('path');
 require('dotenv').config({
-  path: path.resolve(__dirname, '.env')  // resolve() is more robust than join()
+  path: path.resolve(__dirname, '.env')
 });
-const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI)
-  .then(() => console.log('Connected to MongoDB Atlas'))
-  .catch(err => console.error('Connection error:', err));
+const mongoose = require('mongoose');
 const multer = require('multer');
-const path = require('path');
 const cors = require('cors');
 const Loan = require('./models/Loan');
 const { sendEmail } = require('./utils/email');
 const { sendOtp, verifyOtp } = require('./utils/otp');
 
+// MongoDB Connection
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('Connected to MongoDB Atlas'))
+  .catch(err => console.error('Connection error:', err));
+
 const app = express();
+
+
+// Your routes and other server logic go here...
+
+module.exports = app;;
 
 // Middleware
 app.use(cors());

@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: trust-fund-loan
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server.js
+    env: node
